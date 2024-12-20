@@ -8,5 +8,5 @@
 
 ## APP 畫面
 
-![screenshot of the APP](/assets/images/demo1.png)
-![screenshot of the APP](/assets/images/demo2.png)
+![screenshot of the APP](/assets/images/demo/demo1.png)
+![screenshot of the APP](/assets/images/demo/demo2.png)
