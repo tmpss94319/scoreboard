@@ -4,7 +4,7 @@
     "scheme": "myScoreBoard",
     "slug": "myScoreBoard",
     "version": "1.0.0",
-    "orientation": "default",
+    "orientation": "landscape",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
@@ -17,7 +17,8 @@
       "supportsTablet": true,
       "infoPlist": {
         "UIRequiresFullScreen": true
-      }
+      },
+      "bundleIdentifier": "com.tmpss94319.ScoreBoard"
     },
     "android": {
       "adaptiveIcon": {
@@ -30,6 +31,14 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "fed7e251-b85b-403a-8ead-24ad9b3b69c4"
+      }
+    }
   }
 }

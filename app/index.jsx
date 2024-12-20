@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, SafeAreaView, Button } from "react-native";
+import {
+	StyleSheet,
+	Text,
+	View,
+	SafeAreaView,
+	Button,
+	Alert,
+} from "react-native";
 import ColorPicker, {
 	Panel1,
 	Swatches,
@@ -32,6 +39,21 @@ export default function App() {
 		setRightScoreColor(leftScoreColor);
 	};
 
+	const handleClearScore = () => {
+		Alert.alert("清空分數", "確定要清空分數嗎？", [
+			{
+				text: "取消",
+			},
+			{
+				text: "確定",
+				onPress: () => {
+					setLeftScore(0);
+					setRightScore(0);
+				},
+			},
+		]);
+	};
+
 	return (
 		<View style={styles.fullScreen}>
 			<MyButton
@@ -39,7 +61,14 @@ export default function App() {
 				handlePress={() => {
 					handleSwitchSide();
 				}}
-				containerStyle={styles.swap}
+				containerStyle={styles.swapBtn}
+			/>
+			<MyButton
+				text={"clear"}
+				handlePress={() => {
+					handleClearScore();
+				}}
+				containerStyle={styles.clearBtn}
 			/>
 			{/* =================== 左邊 =====================*/}
 			<View style={[styles.left, { backgroundColor: leftBgColor }]}>
@@ -115,7 +144,7 @@ const styles = StyleSheet.create({
 		justifyContent: "flex-start",
 	},
 	leftScore: {
-		fontSize: 200,
+		fontSize: 250,
 	},
 	right: {
 		flex: 1,
@@ -127,9 +156,9 @@ const styles = StyleSheet.create({
 		justifyContent: "flex-end",
 	},
 	rightScore: {
-		fontSize: 200,
+		fontSize: 250,
 	},
-	swap: {
+	swapBtn: {
 		position: "absolute",
 		top: "50%",
 		left: "50%",
@@ -139,6 +168,16 @@ const styles = StyleSheet.create({
 		zIndex: 20,
 		// borderColor: "black",
 		// borderWidth: 1,
+		backgroundColor: "white",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	clearBtn: {
+		position: "absolute",
+		top: "10%",
+		left: "50%",
+		transform: [{ translateX: "-50%" }, { translateY: "-50%" }],
+		zIndex: 20,
 		backgroundColor: "white",
 		justifyContent: "center",
 		alignItems: "center",
