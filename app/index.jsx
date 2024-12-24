@@ -55,7 +55,7 @@ export default function App() {
 	};
 
 	return (
-		<View style={styles.fullScreen}>
+		<SafeAreaView style={[styles.fullScreen]}>
 			<MyButton
 				text={<Fontisto name="arrow-h" size={48} color="lightgrey" />}
 				handlePress={() => {
@@ -116,7 +116,7 @@ export default function App() {
 					{rightScore}
 				</Text>
 			</View>
-		</View>
+		</SafeAreaView>
 	);
 }
 
@@ -126,12 +126,13 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 	},
 	fullScreen: {
-		position: "absolute",
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-		backgroundColor: "violet",
+		// position: "absolute",
+		// top: 0,
+		// left: 0,
+		// right: 0,
+		// bottom: 0,
+		marginTop: 20,
+		backgroundColor: "#fff",
 		flexDirection: "row",
 	},
 	left: {
